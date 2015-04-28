@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TicTacToeProject</string>
+
+
+    <string name="action_settings">Settings</string>
+    <string name="action_exit">exit</string>
+    <string name="action_new">new</string>
+</resources>

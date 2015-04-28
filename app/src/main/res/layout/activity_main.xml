@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Tic-Tac-Toe!"
+        android:id="@+id/textView"
+        android:textSize="50sp"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignEnd="@+id/cell3" />
+    <Button
+        android:id="@+id/cell1"
+        android:layout_width="65dip"
+        android:layout_height="65dip"
+        android:layout_above="@+id/cell4"
+        android:layout_alignLeft="@+id/cell4"
+        android:minHeight="65dip"
+        android:textSize="32sp" />
+
+    <Button
+        android:id="@+id/cell2"
+        android:layout_width="65dip"
+        android:layout_height="65dip"
+        android:layout_alignBaseline="@+id/cell1"
+        android:layout_alignBottom="@+id/cell1"
+        android:layout_alignLeft="@+id/cell5"
+        android:minHeight="65dip"
+        android:textSize="32sp" />
+
+    <Button
+        android:id="@+id/cell3"
+        android:layout_width="65dip"
+        android:layout_height="65dip"
+        android:layout_alignBaseline="@+id/cell2"
+        android:layout_alignBottom="@+id/cell2"
+        android:layout_alignLeft="@+id/cell6"
+        android:minHeight="65dip"
+        android:textSize="32sp" />
+
+
+
+    <Button
+        android:id="@+id/cell4"
+        android:layout_width="65dip"
+        android:layout_height="65dip"
+        android:layout_alignBaseline="@+id/cell5"
+        android:layout_alignBottom="@+id/cell5"
+        android:layout_margin="16dp"
+        android:layout_toLeftOf="@+id/cell5"
+        android:minHeight="65dip"
+        android:textSize="32sp" />
+    <Button
+        android:id="@+id/cell5"
+        android:layout_width="65dip"
+        android:layout_height="65dip"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_margin="16dp"
+        android:minHeight="65dip"
+        android:text=""
+        android:textSize="32sp" />
+
+    <Button
+        android:id="@+id/cell6"
+        android:layout_width="65dip"
+        android:layout_height="65dip"
+        android:layout_centerVertical="true"
+        android:layout_margin="16dp"
+        android:layout_toRightOf="@+id/cell5"
+        android:minHeight="65dip"
+        android:textSize="32sp" />
+
+    <Button
+        android:id="@+id/cell7"
+        android:layout_width="65dip"
+        android:layout_height="65dip"
+        android:layout_alignBaseline="@+id/cell8"
+        android:layout_alignBottom="@+id/cell8"
+        android:layout_alignLeft="@+id/cell4"
+        android:minHeight="65dip"
+        android:textSize="32sp"
+        />
+
+    <Button
+        android:id="@+id/cell8"
+        android:layout_width="65dip"
+        android:layout_height="65dip"
+        android:layout_alignBaseline="@+id/cell9"
+        android:layout_alignBottom="@+id/cell9"
+        android:layout_alignLeft="@+id/cell5"
+        android:minHeight="65dip"
+        android:textSize="32sp" />
+
+    <Button
+        android:id="@+id/cell9"
+        android:layout_width="65dip"
+        android:layout_height="65dip"
+        android:layout_alignLeft="@+id/cell6"
+        android:layout_below="@+id/cell6"
+        android:layout_marginTop="15dp"
+        android:minHeight="65dip"
+        android:textSize="32sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/score"
+        android:text=""
+        android:layout_below="@+id/cell8"
+        android:textSize="30sp"
+        android:layout_marginTop="30dp"/>
+
+
+</RelativeLayout>
