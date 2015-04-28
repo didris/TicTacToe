@@ -18,7 +18,9 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
     Button[] bArray = null;
     Button a1, a2, a3, b1, b2, b3, c1, c2, c3;
     TextView score;
-    int result=0;
+    int xWonTimes=0;
+    int oWonTimes=0;
+
 
 
     @Override
@@ -74,9 +76,6 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 
     @Override
     public void onClick(View v) {
-        // just to be clear. as no other views are registered YET,
-        // it is safe to assume that only
-        // the 9 buttons call this on click
         buttonClicked(v);
     }
 
@@ -92,7 +91,7 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
         }
         turn_count++;
         b.setClickable(false);
-        b.setBackgroundColor(Color.LTGRAY);
+       // b.setBackgroundColor(Color.LTGRAY);
         turn = !turn;
 
         checkForWinner();
@@ -104,39 +103,74 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 
         // horizontal:
         if (a1.getText() == a2.getText() && a2.getText() == a3.getText()
-                && !a1.isClickable())
+                && !a1.isClickable()){
             there_is_a_winner = true;
+        if(turn==false)
+            xWonTimes++;
+            else oWonTimes++;
+        }
         else if (b1.getText() == b2.getText() && b2.getText() == b3.getText()
-                && !b1.isClickable())
+                && !b1.isClickable()){
             there_is_a_winner = true;
+            if(turn==false)
+                xWonTimes++;
+            else oWonTimes++;
+        }
         else if (c1.getText() == c2.getText() && c2.getText() == c3.getText()
-                && !c1.isClickable())
+                && !c1.isClickable()){
             there_is_a_winner = true;
-
+            if(turn==false)
+                xWonTimes++;
+            else oWonTimes++;
+        }
             // vertical:
         else if (a1.getText() == b1.getText() && b1.getText() == c1.getText()
-                && !a1.isClickable())
+                && !a1.isClickable()){
             there_is_a_winner = true;
+            if(turn==false)
+                xWonTimes++;
+            else oWonTimes++;
+        }
         else if (a2.getText() == b2.getText() && b2.getText() == c2.getText()
-                && !b2.isClickable())
+                && !b2.isClickable()){
             there_is_a_winner = true;
+            if(turn==false)
+                xWonTimes++;
+            else oWonTimes++;
+        }
         else if (a3.getText() == b3.getText() && b3.getText() == c3.getText()
-                && !c3.isClickable())
+                && !c3.isClickable()){
             there_is_a_winner = true;
+            if(turn==false)
+                xWonTimes++;
+            else oWonTimes++;
+        }
 
             // diagonal:
         else if (a1.getText() == b2.getText() && b2.getText() == c3.getText()
-                && !a1.isClickable())
+                && !a1.isClickable()){
             there_is_a_winner = true;
+            if(turn==false)
+                xWonTimes++;
+            else oWonTimes++;
+        }
         else if (a3.getText() == b2.getText() && b2.getText() == c1.getText()
-                && !b2.isClickable())
+                && !b2.isClickable()){
             there_is_a_winner = true;
+            if(turn==false)
+                xWonTimes++;
+            else oWonTimes++;
+        }
 
         if (there_is_a_winner) {
             if (!turn)
-                message("X wins");
+            {message("X wins");
+            }
+
             else
-                message("O wins");
+            { message("O wins");
+;
+            }
             enableOrDisable(false);
         } else if (turn_count == 9)
             message("No winner");
@@ -144,7 +178,7 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
     }
 
     private void message(String text) {
-        score.setText(text);
+        score.setText(text+", "+"X score="+xWonTimes+",  "+"O score"+oWonTimes);
        // Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT)
          //       .show();
     }
