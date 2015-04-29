@@ -6,7 +6,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Tic-Tac-Toe!"
+        android:text="   Tic-Tac-Toe!"
         android:id="@+id/textView"
         android:textSize="50sp"
         android:layout_marginTop="20dp"
