@@ -6,9 +6,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="   Tic-Tac-Toe!"
+        android:text="Tic-Tac-Toe!"
         android:id="@+id/textView"
-        android:textSize="50sp"
+        android:textSize="40sp"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         android:layout_alignEnd="@+id/cell3" />
@@ -19,7 +19,8 @@
         android:layout_above="@+id/cell4"
         android:layout_alignLeft="@+id/cell4"
         android:minHeight="65dip"
-        android:textSize="32sp" />
+        android:textSize="32sp"
+        android:layout_margin="2dp"/>
 
     <Button
         android:id="@+id/cell2"
@@ -29,7 +30,8 @@
         android:layout_alignBottom="@+id/cell1"
         android:layout_alignLeft="@+id/cell5"
         android:minHeight="65dip"
-        android:textSize="32sp" />
+        android:textSize="32sp"
+        android:layout_margin="2dp"/>
 
     <Button
         android:id="@+id/cell3"
@@ -39,7 +41,8 @@
         android:layout_alignBottom="@+id/cell2"
         android:layout_alignLeft="@+id/cell6"
         android:minHeight="65dip"
-        android:textSize="32sp" />
+        android:textSize="32sp"
+        android:layout_margin="2dp"/>
 
 
 

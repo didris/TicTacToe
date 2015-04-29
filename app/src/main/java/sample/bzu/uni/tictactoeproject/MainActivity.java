@@ -179,7 +179,7 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
     }
 
     private void message(String text) {
-        score.setText(text+", "+"  x-Score="+xWonTimes+",  "+" o-Score"+oWonTimes);
+        score.setText(text+", "+"  x-Score="+xWonTimes+",  "+" "+" o-Score"+oWonTimes);
         new AlertDialog.Builder(this)
                 .setTitle("Play again")
                 .setMessage("Do you want to play again?")
@@ -209,7 +209,7 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
             if (enable) {
                 b.setBackgroundColor(Color.parseColor("#ffc0cb"));
             } else {
-                b.setBackgroundColor(Color.parseColor("#c9eac6"));
+                b.setBackgroundColor(Color.LTGRAY);
             }
         }
     }
