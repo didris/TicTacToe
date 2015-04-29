@@ -1,5 +1,7 @@
 package sample.bzu.uni.tictactoeproject;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -20,8 +22,6 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
     TextView score;
     int xWonTimes=0;
     int oWonTimes=0;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,7 +91,7 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
         }
         turn_count++;
         b.setClickable(false);
-       // b.setBackgroundColor(Color.LTGRAY);
+         b.setBackgroundColor(Color.LTGRAY);
         turn = !turn;
 
         checkForWinner();
@@ -105,8 +105,9 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
         if (a1.getText() == a2.getText() && a2.getText() == a3.getText()
                 && !a1.isClickable()){
             there_is_a_winner = true;
-        if(turn==false)
-            xWonTimes++;
+
+            if(turn==false)
+                xWonTimes++;
             else oWonTimes++;
         }
         else if (b1.getText() == b2.getText() && b2.getText() == b3.getText()
@@ -123,7 +124,7 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
                 xWonTimes++;
             else oWonTimes++;
         }
-            // vertical:
+        // vertical:
         else if (a1.getText() == b1.getText() && b1.getText() == c1.getText()
                 && !a1.isClickable()){
             there_is_a_winner = true;
@@ -146,7 +147,7 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
             else oWonTimes++;
         }
 
-            // diagonal:
+        // diagonal:
         else if (a1.getText() == b2.getText() && b2.getText() == c3.getText()
                 && !a1.isClickable()){
             there_is_a_winner = true;
@@ -169,7 +170,7 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
 
             else
             { message("O wins");
-;
+                ;
             }
             enableOrDisable(false);
         } else if (turn_count == 9)
@@ -178,9 +179,27 @@ public class MainActivity extends ActionBarActivity implements OnClickListener {
     }
 
     private void message(String text) {
-        score.setText(text+", "+"X score="+xWonTimes+",  "+"O score"+oWonTimes);
-       // Toast.makeText(getApplicationContext(), text, Toast.LENGTH_SHORT)
-         //       .show();
+        score.setText(text+", "+"  X score="+xWonTimes+",  "+" O score"+oWonTimes);
+        new AlertDialog.Builder(this)
+                .setTitle("Play again")
+                .setMessage("Do you want to play again?")
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        turn = true;
+                        turn = true;
+                        turn_count = 0;
+                        enableOrDisable(true);
+                        score.setText(" ");
+                    }
+                })
+                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                        System.exit(0);
+                    }
+                })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
     }
 
     private void enableOrDisable(boolean enable) {
